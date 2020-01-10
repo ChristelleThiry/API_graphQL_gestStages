@@ -1,0 +1,32 @@
+scalar Date
+
+type stage {
+  num_stage: Int
+  debut_stage: Date
+  fin_stage: Date
+  type_stage: Date
+  desc_projet: String
+  observation_stage: String
+  etudiant: etudiant
+  professeur: professeur
+  entreprise: entreprise
+  missions: [mission]
+}
+
+input StageInput {
+  num_stage: Int
+  debut_stage: Date
+  fin_stage: Date
+  type_stage: String
+  desc_projet: String
+  observation_stage: String
+}
+
+type Query {
+   getStages: [stage]
+   getStageById(num_stage: Int!): stage
+}
+
+type Mutation {
+   createStage(data: StageInput): stage
+}

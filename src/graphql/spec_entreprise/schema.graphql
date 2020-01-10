@@ -1,0 +1,15 @@
+type spec_entreprise {
+  num_entreprise: Int
+  num_spec: Int
+  entreprise: entreprise
+  specialite: specialite
+}
+
+input SpecEntrepriseWhere {
+  num_prof: Int
+  num_classe: Int
+}
+
+type Query {
+   getSpecEntreprise(where: SpecEntrepriseWhere, limit: Int, offset: Int): spec_entreprise
+}

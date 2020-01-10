@@ -1,0 +1,16 @@
+type prof_classe {
+  num_classe: Int
+  num_prof: Int
+  est_prof_principal: Int
+  professeur: professeur
+  classe: classe
+}
+
+input ProfClasseWhere {
+  num_prof: Int
+  num_classe: Int
+}
+
+type Query {
+   getProfClasse(where: ProfClasseWhere, limit: Int, offset: Int): prof_classe
+}

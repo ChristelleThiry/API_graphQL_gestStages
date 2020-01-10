@@ -1,0 +1,42 @@
+type entreprise {
+  num_entreprise: Int
+  raison_sociale: String
+  nom_contact: String
+  nom_resp: String
+  rue_entreprise: String
+  cp_entreprise: Int
+  ville_entreprise: String
+  tel_entrprise: String
+  fax_entreprise: String
+  email: String
+  observation: String
+  site_entreprise: String
+  niveau: String
+  en_activite: Int
+  spec_entreprises: [spec_entreprise]
+}
+
+input EntrepriseInput {
+  num_entreprise: Int
+  raison_sociale: String
+  nom_contact: String
+  nom_resp: String
+  rue_entreprise: String
+  cp_entreprise: Int
+  ville_entreprise: String
+  tel_entrprise: String
+  fax_entreprise: String
+  email: String
+  observation: String
+  site_entreprise: String
+  niveau: String
+  en_activite: Int
+}
+
+type Query {
+   getEntreprise: [entreprise]
+}
+
+type Mutation {
+   createEntreprise(data: EntrepriseInput): entreprise
+}

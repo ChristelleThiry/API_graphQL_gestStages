@@ -1,0 +1,16 @@
+type classe {
+  num_classe: Int
+  nom_classe: String
+  etudiants: [etudiant]
+  prof_classes: [prof_classe]
+}
+
+input ClasseWhere {
+  num_classe: Int
+}
+
+type Query {
+   getClasse(where: ClasseWhere, limit: Int, offset: Int): classe
+   getClasseById(num_classe: Int!): classe
+   getClasses: [classe]
+}

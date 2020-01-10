@@ -1,0 +1,14 @@
+type mission {
+  num_mission: Int
+  libelle: String
+  stage: stage
+}
+
+input MissionWhere {
+  num_mission: Int
+}
+
+type Query {
+   getMission(where: MissionWhere, limit: Int, offset: Int): mission
+   getMissionById(num_mission: Int!): mission
+}

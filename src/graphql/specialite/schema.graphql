@@ -1,0 +1,14 @@
+type specialite {
+  num_spec: Int
+  libelle: String
+  spec_entreprises: [spec_entreprise]
+}
+
+input SpecialiteWhere {
+  num_spec: Int
+}
+
+type Query {
+   getSpecialite(where: SpecialiteWhere, limit: Int, offset: Int): specialite
+   getSpecialiteById(num_spec: Int!): specialite
+}

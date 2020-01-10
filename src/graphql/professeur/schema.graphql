@@ -1,0 +1,28 @@
+type professeur {
+  num_prof: Int
+  prenom_prof: String
+  nom_prof: String
+  login: String
+  mdp: String
+  email: String
+  prof_classes: [prof_classe]
+  jwt: String @isAuthUser
+}
+
+input ProfesseurInput {
+  num_prof: Int
+  prenom_prof: String
+  nom_prof: String
+  login: String
+  mdp: String
+}
+
+type Query {
+   getProfesseur: professeur @isAuth
+   loginProfesseur(login: String!, password: String!): professeur
+   getProfByName(nom_prof: String!): [professeur]
+}
+
+type Mutation {
+   createProfesseur(data: ProfesseurInput): professeur
+}

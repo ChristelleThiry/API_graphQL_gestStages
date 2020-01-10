@@ -1,0 +1,30 @@
+type etudiant {
+  num_etudiant: Int
+  prenom_etudiant: String
+  nom_etudiant: String
+  login: String
+  mdp: String
+  classe: classe
+  jwt: String @isAuthUser
+}
+
+input EtudiantInput {
+  num_etudiant: Int
+  prenom_etudiant: String
+  nom_etudiant: String
+  login: String
+  mdp: String
+  num_classe: Int
+}
+
+type Query {
+   getEtudiant: etudiant @isAuth
+   loginEtudiant(login: String!, password: String!): etudiant
+   getAllStudents: [etudiant]
+   getStudentByName(nom_etudiant: String!): [etudiant]
+}
+
+type Mutation {
+   createEtudiant(data: EtudiantInput): etudiant
+   updateEtudiant(data: EtudiantInput): etudiant
+}
