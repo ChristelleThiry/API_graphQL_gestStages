@@ -1,6 +1,5 @@
 import { resolver } from 'graphql-sequelize';
-import { classe, prof_classe } from '../../models';
-import to from 'await-to-js';
+import { classe } from '../../models';
 
 export const ClasseMap = {
     etudiants: resolver(classe.associations.etudiants),

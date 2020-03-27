@@ -17,7 +17,6 @@ export const sequelize = new Sequelize({
            return filename.substring(0, filename.indexOf('.model')) === member.toLowerCase();
         },
 });
-export { User } from './user.model';
 export { etudiant } from './etudiant.model';
 export { professeur } from './professeur.model';
 export { classe } from './classe.model';
@@ -27,5 +26,4 @@ export { entreprise } from './entreprise.model';
 export { specialite } from './specialite.model';
 export { mission } from './mission.model';
 export { stage } from './stage.model';
-export { Company } from './company.model';
 
