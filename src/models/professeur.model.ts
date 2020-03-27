@@ -1,5 +1,4 @@
-import { Table, Column, Model, HasMany, BelongsTo, ForeignKey, BeforeSave } from 'sequelize-typescript';
-import { classe } from "./classe.model";
+import { Table, Column, Model, HasMany, BeforeSave } from 'sequelize-typescript';
 import * as bcrypt from 'bcrypt';
 import to from 'await-to-js';
 import * as jsonwebtoken from'jsonwebtoken';

@@ -5,7 +5,7 @@ export const Query = {
     getSpecialite: resolver(specialite),
 
     getSpecialiteById: resolver(specialite, {
-        after: async (specialite, { num_spec }) => {
+        after: (specialite, { num_spec }) => {
             specialite.where = { num_spec };
             return specialite;
         }

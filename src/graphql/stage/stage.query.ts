@@ -8,7 +8,7 @@ export const Query = {
         }
     }),
     getStageById: resolver(stage, {
-        after: async (stage, { num_stage }) => {
+        after: (stage, { num_stage }) => {
             stage.where = { num_stage };
             return stage;
         }

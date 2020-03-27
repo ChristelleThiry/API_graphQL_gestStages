@@ -1,4 +1,4 @@
-import { Table, Column, Model, HasMany, BelongsTo, ForeignKey, BeforeSave } from 'sequelize-typescript';
+import { Table, Column, Model, BelongsTo, ForeignKey } from 'sequelize-typescript';
 import { stage } from "./stage.model";
 
 @Table({timestamps: false})

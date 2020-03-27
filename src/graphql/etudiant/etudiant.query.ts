@@ -4,7 +4,7 @@ import to from 'await-to-js';
 
 export const Query = {
     getEtudiant: resolver(etudiant, {
-        before: async (findOptions, {}, {user}) => {
+        before: (findOptions, {}, {user}) => {
             findOptions.where = {num_etudiant: user.num_etudiant};
             return findOptions;
         },
@@ -13,7 +13,7 @@ export const Query = {
         }
     }),
     loginEtudiant: resolver(etudiant, {
-        before: async (findOptions, { login }) => {
+        before: (findOptions, { login }) => {
             findOptions.where = {login};
             return findOptions;
         },
@@ -31,7 +31,7 @@ export const Query = {
     }),
     getAllStudents: resolver(etudiant),
     getStudentByName: resolver(etudiant, {
-        after: async (findOptions, { nom_etudiant }) => {
+        after: (findOptions, { nom_etudiant }) => {
             findOptions.where = {nom_etudiant};
             return findOptions;
         }
